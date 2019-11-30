@@ -1,0 +1,42 @@
+
+<!-- https://www.npmjs.com/package/ngx-pagination?fbclid=IwAR1pkSoqqeNmrbijNwVyEhzL4861ED7Rdegnx6oFepQaEawKduOvyjUEHG8 -->
+<div class="container" >
+  <a  class="btn" routerLink="/AddNewBank" routerLinkActive="active-link" >Add New Bank</a>
+ 
+  <br><br>
+  
+  <div id="dataTable" >
+   
+  <table >
+    <thead >
+      <tr id="head">
+        <th>#</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name
+          
+        </th>
+       
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bank of GetAllBanks,let i=index">
+          <td>{{i}}</td>
+        <td>{{bank.id}}</td>
+        <td>{{bank.name}}</td>
+      
+        <td scope="col" ><a   class="btn" routerLink="/Update/{{bank.id}}" routerLinkActive="active-link" >Edit</a></td>  
+        <td scope="col"  ><button class="btn"  (click)="Delete(bank.id)">Delete</button></td>
+      </tr>
+    </tbody> 
+  </table>
+  <br><br>
+ 
+ </div>
+</div>
+
+
+
+
